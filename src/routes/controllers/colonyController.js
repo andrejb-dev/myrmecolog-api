@@ -5,7 +5,6 @@ module.exports = {
         return res.send(db.colonies);
     },
     addColony : function (req, res) {
-        db.push(db.colonies, {name:"colony" + db.colonies.length})
         return res.send('Colony Added.');
     },
     readColony : function (req, res) {
