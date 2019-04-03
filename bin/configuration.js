@@ -18,5 +18,4 @@ module.exports.applyConfiguration = function (server) {
 }
 
 //  Set the environment variables
-module.exports.port = 8080;
-module.exports.ipaddress = "127.0.0.1";
+module.exports.port = process.env.PORT || 8080;
