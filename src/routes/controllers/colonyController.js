@@ -1,17 +1,20 @@
+var db = require('../../db/db');
+
 module.exports = {
     readColonies : function (req, res) {
-        res.send('getting colonies..');
+        return res.send(db.colonies);
     },
     addColony : function (req, res) {
-        res.send('adding colony..');
+        db.push(db.colonies, {name:"colony" + db.colonies.length})
+        return res.send('Colony Added.');
     },
     readColony : function (req, res) {
-        res.send('getting colony ' + req.params.colonyId);
+        return res.send('getting colony ' + req.params.colonyId);
     },
     updateColony : function (req, res) {
-        res.send('updating colony ' + req.params.colonyId);
+        return res.send('updating colony ' + req.params.colonyId);
     },
     deleteColony : function (req, res) {
-        res.send('deleting colony ' + req.params.colonyId);
+        return npres.send('deleting colony ' + req.params.colonyId);
     }
 }
