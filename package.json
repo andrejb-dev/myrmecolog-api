@@ -4,7 +4,7 @@
   "description": "Api for myrmecolog app",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon app.js",
+    "test": "nodemon --exec \"heroku local web\" --signal SIGTERM",
     "start": "node app.js"
   },
   "repository": {
