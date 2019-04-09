@@ -1,6 +1,4 @@
-var server = require('./src/server').createServer(),
-    configuration = require('./bin/configuration');
+const server = require('./src/server').createServer();
+const port = process.env.PORT || 8080;
 
-configuration.applyConfiguration(server);
-
-server.listen(configuration.port, () => console.log(`Listening on ${ configuration.port }`));
+server.listen(port, () => console.log(`Listening on port ${ port }`));
