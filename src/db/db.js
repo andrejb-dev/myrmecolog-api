@@ -1,5 +1,5 @@
 const pgp = require('pg-promise')();
-const db = pgp("postgres://postgres:postgres@localhost:5432/postgres");
+const db = pgp(process.env.DATABASE_URL || "postgres://postgres:postgres@localhost:5432/postgres");
 const log = require('../logging.handler')('PostgresDB');
 
 db.proc('version')
