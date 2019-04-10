@@ -5,7 +5,7 @@ const TABLE_NAME = 'colony';
 module.exports = {
     readColonies: function (req, res, next) {
         log.log('getting colonies');
-        db.colonies.all()
+        db.colonies.all(req.query.keeper)
             .then((data) => {
                 log.log('returning', data);
                 res.send(data);
@@ -16,6 +16,7 @@ module.exports = {
             });
     },
     addColony: function (req, res, next) {
+        log.log('add colony');
         db.colonies.add(req.body)
             .then(data => {
                 res.status(201)

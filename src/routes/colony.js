@@ -5,7 +5,7 @@ module.exports.attachHandlers = attachHandlers;
 function attachHandlers(router) {
 
     router.route('/colonies')
-        .get(controller.readColonies)
+        // .get(controller.readColonies)
         .post(controller.addColony);
 
     router.route('/colonies/:colonyId')

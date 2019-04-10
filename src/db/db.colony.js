@@ -1,8 +1,8 @@
 module.exports = function (db, log) {
     return {
-        all: () => {
+        all: keeperLogin => {
             log.log('select colonies');
-            return db.any('Select * from colony');
+            return db.task(t => getColoniesTree(t, keeperLogin));
         },
         add: colony => {
             log.log('insert colony', colony);
@@ -25,4 +25,7 @@ module.exports = function (db, log) {
             return db.none('DELETE FROM colony WHERE id = $1', colonyId);
         }
     };
+}
+
+function getColoniesTree(t, keeperLogin) {
 }
