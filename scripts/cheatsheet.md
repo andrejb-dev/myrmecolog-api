@@ -8,6 +8,8 @@ heroku pg:ps
 heroku pg:kill <process_id>
 heroku pg:killall
 
+heroku logs --tail
+
 heroku pg:psql postgresql-deep-42149 --app myrmecolog-api
 
 ## node.js
