@@ -17,5 +17,7 @@ module.exports = {
     },
     colonies: require('./db.colony')(db, log),
     keepers: require('./db.keeper')(db, log),
-    transfers: require('./db.transfer')(db, log)
+    transfers: require('./db.transfer')(db, log),
+    tasks: require('./db.task')(db, log),
+    inspections: require('./db.inspection')(db, log)
 }
