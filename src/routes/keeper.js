@@ -1,4 +1,4 @@
-const controller = require('./controllers/keeperController');
+const controller = require('./controllers/keeper.controller');
 
 module.exports.attachHandlers = attachHandlers;
 

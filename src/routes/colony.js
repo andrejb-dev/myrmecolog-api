@@ -1,4 +1,4 @@
-const controller = require('./controllers/colonyController');
+const controller = require('./controllers/colony.controller');
 
 module.exports.attachHandlers = attachHandlers;
 
