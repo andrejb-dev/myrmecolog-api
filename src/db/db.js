@@ -16,5 +16,6 @@ module.exports = {
         return db.one('Select * from ' + table + ' where id = $1', id);
     },
     colonies: require('./db.colony')(db, log),
-    keepers: require('./db.keeper')(db, log)
+    keepers: require('./db.keeper')(db, log),
+    transfers: require('./db.transfer')(db, log)
 }

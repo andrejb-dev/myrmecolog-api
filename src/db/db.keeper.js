@@ -6,11 +6,9 @@ module.exports = function (db, log) {
         },
         add: keeper => {
             log.log('insert keeper', keeper);
-            return db.task(t => {
-                return t.one({
-                    text: 'INSERT INTO keeper(login, password) VALUES($1,$2) RETURNING *',
-                    values: [keeper.login, keeper.password]
-                });
+            return db.none({
+                text: 'INSERT INTO keeper(login, password) VALUES($1,$2)',
+                values: [keeper.login, keeper.password]
             });
         }
     };

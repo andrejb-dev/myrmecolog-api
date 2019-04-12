@@ -5,9 +5,8 @@ module.exports = {
     createKeeper: function (req, res, next) {
         log.log('create keeper');
         db.keepers.add(req.body)
-            .then(data => {
-                res.status(201)
-                    .send(data);
+            .then(() => {
+                res.status(201);
             })
             .catch((error) => {
                 log.error('Error occured', error);
